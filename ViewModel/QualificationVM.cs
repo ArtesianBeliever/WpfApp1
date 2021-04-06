@@ -30,7 +30,7 @@ namespace WpfApp1.ViewModel
             });
             this.ListQualification.Add(new Qualification
             {
-                Id = 1,
+                Id = 3,
                 NameQualification = "Прикладной бакалавр"
             });
         }

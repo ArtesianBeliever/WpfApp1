@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
-        Title="WindowGroup" Height="450" Width="800">
+        Title="Группы" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel>
+            <ListView x:Name="lvGroup">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="Код" Width="50"
+                                            DisplayMemberBinding="{Binding Id}"/>
+                            <GridViewColumn Header="Специальность" 
+                                            DisplayMemberBinding="{Binding Speciality}"/>
+                            <GridViewColumn Header="Квалификация" 
+                                            DisplayMemberBinding="{Binding Qualification}"/>
+                            <GridViewColumn Header="Форма обучения"
+                                            DisplayMemberBinding="{Binding FormEducation}"/>
+                            <GridViewColumn Header="Факультет"
+                                            DisplayMemberBinding="{Binding Faculty}"/>
+                            <GridViewColumn Header="Имя группы"
+                                            DisplayMemberBinding="{Binding Name}"/>
+                            <GridViewColumn Header="Курс" 
+                                            DisplayMemberBinding="{Binding Course}"/>
+                            <GridViewColumn Header="Кол-во Студентов" 
+                                            DisplayMemberBinding="{Binding CountStudent}"/>
+                            <GridViewColumn Header="Кол-во Подгрупп"
+                                            DisplayMemberBinding="{Binding CountSubgroup}"/>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
     </Grid>
 </Window>

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp1.ViewModel;
 
 namespace WpfApp1.View
 {
@@ -22,6 +23,8 @@ namespace WpfApp1.View
         public WindowQual()
         {
             InitializeComponent();
+            QualificationVM vmQual = new QualificationVM();
+            lvQual.ItemsSource = vmQual.ListQualification;
         }
     }
 }

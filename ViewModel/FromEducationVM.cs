@@ -10,7 +10,7 @@ namespace WpfApp1.ViewModel
 {
     class FormEducationVM
     {
-        public ObservableCollection<FormEducation> ListQualification
+        public ObservableCollection<FormEducation> ListFormEducation
         {
             get;
             set;
@@ -18,12 +18,12 @@ namespace WpfApp1.ViewModel
     new ObservableCollection<FormEducation>();
         public FormEducationVM()
         {
-            this.ListQualification.Add(new FormEducation
+            this.ListFormEducation.Add(new FormEducation
             {
                 Id = 1,
                 NameForm = "Очная"
             });
-            this.ListQualification.Add(new FormEducation
+            this.ListFormEducation.Add(new FormEducation
             {
                 Id = 2,
                 NameForm = "Заочная"
