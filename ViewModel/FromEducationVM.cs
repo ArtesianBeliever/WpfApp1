@@ -10,6 +10,18 @@ namespace WpfApp1.ViewModel
 {
     class FormEducationVM
     {
+        public int MaxIdF()
+        {
+            int max = 0;
+            foreach (var s in this.ListFormEducation)
+            {
+                if (max < s.Id)
+                {
+                    max = s.Id;
+                };
+            }
+            return max;
+        }
         public ObservableCollection<FormEducation> ListFormEducation
         {
             get;

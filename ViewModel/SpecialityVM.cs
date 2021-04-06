@@ -10,7 +10,19 @@ namespace WpfApp1.ViewModel
 {
     class SpecialityVM
     {
-            public ObservableCollection<Speciality> ListSpeciality
+        public int MaxIdS()
+        {
+            int max = 0;
+            foreach (var s in this.ListSpeciality)
+            {
+                if (max < s.Id)
+                {
+                    max = s.Id;
+                };
+            }
+            return max;
+        }
+        public ObservableCollection<Speciality> ListSpeciality
             {
                 get;
                 set;
@@ -38,4 +50,5 @@ namespace WpfApp1.ViewModel
             });
         }
             }
+
 }

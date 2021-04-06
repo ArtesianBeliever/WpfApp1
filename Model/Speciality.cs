@@ -8,6 +8,10 @@ namespace WpfApp1.Model
 {
     class Speciality
     {
+        public Speciality ShallowCopy()
+        {
+            return (Speciality)this.MemberwiseClone();
+        }
         public int Id { get; set; }
         public string NameSpeciality { get; set; }
         public string Profile { get; set; }

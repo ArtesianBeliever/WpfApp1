@@ -8,6 +8,10 @@ namespace WpfApp1.Model
 {
     class Qualification
     {
+        public Qualification ShallowCopy()
+        {
+            return (Qualification)this.MemberwiseClone();
+        }
         public int Id { get; set; }
         public string NameQualification { get; set; }
         public Qualification() { }

@@ -21,6 +21,9 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static int IdSpec { get; set; }
+        public static int IdQual { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
