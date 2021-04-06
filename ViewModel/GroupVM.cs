@@ -10,6 +10,19 @@ namespace WpfApp1.ViewModel
 {
     class GroupVM
     {
+        public int MaxId()
+        {
+            int max = 0;
+            foreach (var r in this.ListGroup)
+            {
+                if (max < r.Id)
+                {
+                    max = r.Id;
+                };
+            }
+            return max;
+        }
+
         public ObservableCollection<Group> ListGroup
         {
             get;

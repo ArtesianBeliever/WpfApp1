@@ -23,6 +23,8 @@ namespace WpfApp1
     {
         public static int IdSpec { get; set; }
         public static int IdQual { get; set; }
+        public static int IdForm { get; set; }
+        public static int IdGroup { get; set; }
 
         public MainWindow()
         {
