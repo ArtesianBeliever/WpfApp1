@@ -8,10 +8,10 @@
         Title="MainWindow" Height="200" Width="400">
     <Grid>
         <Menu>
-            <MenuItem x:Name="Group" Header="Группа" Click="Group_OnClick"></MenuItem>
-            <MenuItem x:Name="Spec" Header="Специальности" Click="Spec_OnClick"></MenuItem>
-            <MenuItem x:Name="Qual" Header="Квалификации" Click="Qual_OnClick"></MenuItem>
-            <MenuItem x:Name="Form" Header="Формы обучения" Click="Form_OnClick"></MenuItem>
+            <MenuItem x:Name="Teacher" Header="Преподаватели" Click="Teacher_OnClick"></MenuItem>
+            <MenuItem x:Name="Chair" Header="Кафедра" Click="Chair_OnClick"></MenuItem>
+            <MenuItem x:Name="Faculty" Header="Факультет" Click="Faculty_OnClick"></MenuItem>
+            <MenuItem x:Name="Post" Header="Должность" Click="Post_OnClick"></MenuItem>
         </Menu>
     </Grid>
 </Window>
