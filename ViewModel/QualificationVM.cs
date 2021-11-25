@@ -8,31 +8,26 @@ using System.Collections.ObjectModel;
 
 namespace WpfApp1.ViewModel
 {
-    class QualificationVM
+    class PostVM
     {
-        public ObservableCollection<Qualification> ListQualification
+        public ObservableCollection<Post> ListPost
         {
             get;
             set;
         } =
-     new ObservableCollection<Qualification>();
-        public QualificationVM()
+    new ObservableCollection<Post>();
+        public PostVM()
         {
-            this.ListQualification.Add(new Qualification
+            this.ListPost.Add(new Post
             {
                 Id = 1,
-                NameQualification = "Специалист"
+                NamePost = "Доцент"
             });
-            this.ListQualification.Add(new Qualification
+            this.ListPost.Add(new Post
             {
                 Id = 2,
-                NameQualification = "Академический бакалавр"
-            });
-            this.ListQualification.Add(new Qualification
-            {
-                Id = 1,
-                NameQualification = "Прикладной бакалавр"
+                NamePost = "Профессор"
             });
         }
-        }
+    }
 }

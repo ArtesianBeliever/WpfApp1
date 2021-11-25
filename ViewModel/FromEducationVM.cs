@@ -8,25 +8,36 @@ using System.Collections.ObjectModel;
 
 namespace WpfApp1.ViewModel
 {
-    class FormEducationVM
+    class ChairVM
     {
-        public ObservableCollection<FormEducation> ListQualification
+        public ObservableCollection<Chair> ListChair
         {
             get;
             set;
         } =
-    new ObservableCollection<FormEducation>();
-        public FormEducationVM()
+ new ObservableCollection<Chair>();
+        public ChairVM()
         {
-            this.ListQualification.Add(new FormEducation
+            this.ListChair.Add(new Chair
             {
                 Id = 1,
-                NameForm = "Очная"
+                IdFaculty = 1,
+                NameChair = "Кафедра Компьютерных Технологий и Информационной безопасности",
+                ShortNameChair = "КТиБ"
             });
-            this.ListQualification.Add(new FormEducation
+            this.ListChair.Add(new Chair
             {
                 Id = 2,
-                NameForm = "Заочная"
+                IdFaculty = 2,
+                NameChair = "Кафедра Права",
+                ShortNameChair = "КП"
+            });
+            this.ListChair.Add(new Chair
+            {
+                Id = 3,
+                IdFaculty = 2,
+                NameChair = "Кафедра Экономики и Финансов",
+                ShortNameChair = "КЭФ"
             });
         }
     }

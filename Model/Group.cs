@@ -6,30 +6,28 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Model
 {
-    class Group
+    class Teacher
     {
         public int Id { get; set; }
-        public int IdSpeciality { get; set; }
-        public int IdQualification { get; set; }
-        public int IdFormEducation { get; set; }
-        public string Faculty { get; set; }
-        public string Name { get; set; }
-        public int Course { get; set; }
-        public int CountStudent { get; set;}
-        public int CountSubgroup { get; set; }
-        public Group() { }
-        public Group(int id, int idSpeciality, int idQualification, int idFormEducation, string faculty,
-        string name, int course, int countStudent, int countSubgroup)
+        public int IdChair { get; set; }
+        public int IdPost { get; set; }
+        public string FirstName { get; set; }
+        public string SecondName { get; set; }
+        public string LastName { get; set; }
+        public string Phone { get; set; }
+        public string EMail { get; set; }
+        public Teacher() { }
+        public Teacher(int id, int idChair, int idPost, string firstName,
+        string secondName, string lastName, string phone, string email)
         {
             this.Id = id;
-            this.IdSpeciality = idSpeciality;
-            this.IdQualification = idQualification;
-            this.IdFormEducation = idFormEducation;
-            this.Faculty = faculty;
-            this.Name = name;
-            this.Course = course;
-            this.CountStudent = countStudent;
-            this.CountSubgroup = countSubgroup;
+            this.IdChair = idChair;
+            this.IdPost = idPost;
+            this.FirstName = firstName;
+            this.SecondName = secondName;
+            this.LastName = lastName;
+            this.Phone = phone;
+            this.EMail = email;
 
         }
     }

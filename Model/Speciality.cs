@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Model
 {
-    class Speciality
+    class Chair
     {
         public int Id { get; set; }
-        public string NameSpeciality { get; set; }
-        public string Profile { get; set; }
-        public Speciality() { }
-        public Speciality(int id, string nameSpeciality, string profile)
+        public int IdFaculty { get; set; }
+        public string NameChair { get; set; }
+        public string ShortNameChair { get; set; }
+        public Chair() { }
+        public Chair(int id, int idFaculty, string nameChair, string snChair)
         {
             this.Id = id;
-            this.NameSpeciality = nameSpeciality;
-            this.Profile = profile;
+            this.IdFaculty = idFaculty;
+            this.NameChair = nameChair;
+            this.ShortNameChair = snChair;
         }
     }
 }

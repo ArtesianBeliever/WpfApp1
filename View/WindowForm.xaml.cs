@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace WpfApp1.View
 {
     /// <summary>
-    /// Логика взаимодействия для WindowForm.xaml
+    /// Логика взаимодействия для WindowSpec.xaml
     /// </summary>
-    public partial class WindowForm : Window
+    public partial class WindowChair : Window
     {
-        public WindowForm()
+        public WindowChair()
         {
             InitializeComponent();
         }

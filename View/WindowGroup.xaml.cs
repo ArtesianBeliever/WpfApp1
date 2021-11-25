@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace WpfApp1.View
 {
     /// <summary>
-    /// Логика взаимодействия для WindowGroup.xaml
+    /// Логика взаимодействия для WindowQual.xaml
     /// </summary>
-    public partial class WindowGroup : Window
+    public partial class WindowFaculty : Window
     {
-        public WindowGroup()
+        public WindowFaculty()
         {
             InitializeComponent();
         }

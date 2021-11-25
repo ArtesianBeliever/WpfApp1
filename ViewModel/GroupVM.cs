@@ -8,54 +8,27 @@ using System.Collections.ObjectModel;
 
 namespace WpfApp1.ViewModel
 {
-    class GroupVM
+    class FacultyVM
     {
-        public ObservableCollection<Group> ListGroup
+        public ObservableCollection<Faculty> ListFaculty
         {
             get;
             set;
         } =
- new ObservableCollection<Group>();
- public GroupVM()
+     new ObservableCollection<Faculty>();
+        public FacultyVM()
         {
-            this.ListGroup.Add(
-            new Group
+            this.ListFaculty.Add(new Faculty
             {
                 Id = 1,
-                IdSpeciality = 1,
-                IdQualification = 1,
-                IdFormEducation = 1,
-                Faculty = "KTiIB",
-                Name = "PIZS-321",
-                Course = 2,
-                CountStudent = 21,
-                CountSubgroup = 1
+                NameFaculty = "Факультет Информационных Технологий",
+                ShortNameFaculty = "ИТ"
             });
-            this.ListGroup.Add(
-            new Group
+            this.ListFaculty.Add(new Faculty
             {
                 Id = 2,
-                IdSpeciality = 2,
-                IdQualification = 3,
-                IdFormEducation = 2,
-                Faculty = "KTiIB",
-                Name = "PRIZS-321",
-                Course = 2,
-                CountStudent = 24,
-                CountSubgroup = 2
-            });
-            this.ListGroup.Add(
-            new Group
-            {
-                Id = 3,
-                IdSpeciality = 3,
-                IdQualification = 2,
-                IdFormEducation = 2,
-                Faculty = "KTiIB",
-                Name = "PIZ-321",
-                Course = 2,
-                CountStudent = 11,
-                CountSubgroup = 2
+                NameFaculty = "Экономический факультет",
+                ShortNameFaculty = "ФЭ"
             });
         }
     }
