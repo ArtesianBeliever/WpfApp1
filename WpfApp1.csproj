@@ -60,10 +60,10 @@
     <Compile Include="Helper\FindChair.cs" />
     <Compile Include="Model\TeacherDPO.cs" />
     <Compile Include="Model\ChairDPO.cs" />
-    <Compile Include="ViewModel\GroupVM.cs" />
-    <Compile Include="ViewModel\FromEducationVM.cs" />
-    <Compile Include="ViewModel\QualificationVM.cs" />
-    <Compile Include="ViewModel\SpecialityVM.cs" />
+    <Compile Include="ViewModel\FacultyVM.cs" />
+    <Compile Include="ViewModel\ChairVM.cs" />
+    <Compile Include="ViewModel\PostVM.cs" />
+    <Compile Include="ViewModel\TeacherVM.cs" />
     <Compile Include="View\WindowPost.xaml.cs">
       <DependentUpon>WindowPost.xaml</DependentUpon>
     </Compile>
