@@ -8,6 +8,10 @@ namespace WpfApp1.Model
 {
     class Faculty
     {
+        public Faculty ShallowCopy()
+        {
+            return (Faculty)this.MemberwiseClone();
+        }
         public int Id { get; set; }
         public string NameFaculty { get; set; }
         public string ShortNameFaculty { get; set; }

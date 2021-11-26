@@ -10,6 +10,18 @@ namespace WpfApp1.ViewModel
 {
     class FacultyVM
     {
+        public int MaxIdF()
+        {
+            int max = 0;
+            foreach (var s in this.ListFaculty)
+            {
+                if (max < s.Id)
+                {
+                    max = s.Id;
+                };
+            }
+            return max;
+        }
         public ObservableCollection<Faculty> ListFaculty
         {
             get;

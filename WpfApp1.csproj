@@ -60,10 +60,16 @@
     <Compile Include="Helper\FindChair.cs" />
     <Compile Include="Model\TeacherDPO.cs" />
     <Compile Include="Model\ChairDPO.cs" />
-    <Compile Include="ViewModel\GroupVM.cs" />
+    <Compile Include="ViewModel\FacultyVM.cs" />
     <Compile Include="ViewModel\FromEducationVM.cs" />
     <Compile Include="ViewModel\QualificationVM.cs" />
     <Compile Include="ViewModel\SpecialityVM.cs" />
+    <Compile Include="View\NewFaculty.xaml.cs">
+      <DependentUpon>NewFaculty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewPost.xaml.cs">
+      <DependentUpon>NewPost.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\WindowPost.xaml.cs">
       <DependentUpon>WindowPost.xaml</DependentUpon>
     </Compile>
@@ -88,6 +94,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\NewFaculty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewPost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\WindowPost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

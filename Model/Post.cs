@@ -8,6 +8,10 @@ namespace WpfApp1.Model
 {
     class Post
     {
+        public Post ShallowCopy()
+        {
+            return (Post)this.MemberwiseClone();
+        }
         public int Id { get; set; }
         public string NamePost { get; set; }
         public Post() { }

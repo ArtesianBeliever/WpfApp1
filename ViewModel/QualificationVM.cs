@@ -10,6 +10,18 @@ namespace WpfApp1.ViewModel
 {
     class PostVM
     {
+        public int MaxIdQ()
+        {
+            int max = 0;
+            foreach (var s in this.ListPost)
+            {
+                if (max < s.Id)
+                {
+                    max = s.Id;
+                };
+            }
+            return max;
+        }
         public ObservableCollection<Post> ListPost
         {
             get;
