@@ -7,16 +7,16 @@ using WpfApp1.Model;
 
 namespace WpfApp1.Helper
 {
-    class FindSpec
+    class FindChair
     {
         int id;
-        public FindSpec(int id)
+        public FindChair(int id)
         {
             this.id = id;
         }
-        public bool SpecPredicate(Speciality speciality)
+        public bool ChairPredicate(Chair chair)
         {
-            return speciality.Id == id;
+            return chair.Id == id;
         }
     }
 }

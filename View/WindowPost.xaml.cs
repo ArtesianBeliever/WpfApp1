@@ -16,15 +16,15 @@ using WpfApp1.ViewModel;
 namespace WpfApp1.View
 {
     /// <summary>
-    /// Логика взаимодействия для WindowQual.xaml
+    /// Логика взаимодействия для WindowForm.xaml
     /// </summary>
-    public partial class WindowQual : Window
+    public partial class WindowChair : Window
     {
-        public WindowQual()
+        public WindowChair()
         {
             InitializeComponent();
-            QualificationVM vmQual = new QualificationVM();
-            lvQual.ItemsSource = vmQual.ListQualification;
+            PostVM vmPost = new PostVM();
+            lvChair.ItemsSource = vmPost.ListPost;
         }
     }
 }

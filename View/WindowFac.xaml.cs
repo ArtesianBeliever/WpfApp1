@@ -16,15 +16,15 @@ using WpfApp1.ViewModel;
 namespace WpfApp1.View
 {
     /// <summary>
-    /// Логика взаимодействия для WindowForm.xaml
+    /// Логика взаимодействия для WindowQual.xaml
     /// </summary>
-    public partial class WindowForm : Window
+    public partial class WindowFaculty : Window
     {
-        public WindowForm()
+        public WindowFaculty()
         {
             InitializeComponent();
-            FormEducationVM vmForm = new FormEducationVM();
-            lvForm.ItemsSource = vmForm.ListFormEducation;
+            FacultyVM vmFaculty = new FacultyVM();
+            lvFaculty.ItemsSource = vmFaculty.ListFaculty;
         }
     }
 }

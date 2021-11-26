@@ -8,34 +8,52 @@ using System.Collections.ObjectModel;
 
 namespace WpfApp1.ViewModel
 {
-    class SpecialityVM
+    class TeacherVM
     {
-            public ObservableCollection<Speciality> ListSpeciality
-            {
-                get;
-                set;
-            } =
-     new ObservableCollection<Speciality>();
-        public SpecialityVM()
+        public ObservableCollection<Teacher> ListTeacher
         {
-            this.ListSpeciality.Add(new Speciality
+            get;
+            set;
+        } =
+ new ObservableCollection<Teacher>();
+        public TeacherVM()
+        {
+            this.ListTeacher.Add(
+            new Teacher
             {
                 Id = 1,
-                NameSpeciality = "Прикладная Информатика",
-                Profile = "Программист"
+                IdChair = 1,
+                IdPost = 1,
+                FirstName = "Иван",
+                SecondName = "Иванович",
+                LastName = "Иванов",
+                Phone = "8888888888",
+                EMail = "IvanovII@mail.ru"
             });
-            this.ListSpeciality.Add(new Speciality
+            this.ListTeacher.Add(
+            new Teacher
             {
                 Id = 2,
-                NameSpeciality = "Программная инженерия",
-                Profile = "Инженер"
+                IdChair = 2,
+                IdPost = 2,
+                FirstName = "Александр",
+                SecondName = "Александрович",
+                LastName = "Александров",
+                Phone = "8888888888",
+                EMail = "alexandrovAA@mail.ru"
             });
-            this.ListSpeciality.Add(new Speciality
+            this.ListTeacher.Add(
+            new Teacher
             {
                 Id = 3,
-                NameSpeciality = "Компьютерные сети",
-                Profile = "Инженер сетей"
+                IdChair = 3,
+                IdPost = 2,
+                FirstName = "Олег",
+                SecondName = "Олегович",
+                LastName = "Олегов",
+                Phone = "777777777777",
+                EMail = "OlegovOO@mail.ru"
             });
         }
-            }
+    }
 }

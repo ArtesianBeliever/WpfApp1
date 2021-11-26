@@ -55,25 +55,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Helper\FindForm.cs" />
-    <Compile Include="Helper\FindQual.cs" />
-    <Compile Include="Helper\FindSpec.cs" />
-    <Compile Include="Model\GroupDPO.cs" />
+    <Compile Include="Helper\FindPost.cs" />
+    <Compile Include="Helper\FindFaculty.cs" />
+    <Compile Include="Helper\FindChair.cs" />
+    <Compile Include="Model\TeacherDPO.cs" />
+    <Compile Include="Model\ChairDPO.cs" />
     <Compile Include="ViewModel\GroupVM.cs" />
     <Compile Include="ViewModel\FromEducationVM.cs" />
     <Compile Include="ViewModel\QualificationVM.cs" />
     <Compile Include="ViewModel\SpecialityVM.cs" />
-    <Compile Include="View\WindowForm.xaml.cs">
-      <DependentUpon>WindowForm.xaml</DependentUpon>
+    <Compile Include="View\WindowPost.xaml.cs">
+      <DependentUpon>WindowPost.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\WindowGroup.xaml.cs">
-      <DependentUpon>WindowGroup.xaml</DependentUpon>
+    <Compile Include="View\WindowTeacher.xaml.cs">
+      <DependentUpon>WindowTeacher.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\WindowQual.xaml.cs">
-      <DependentUpon>WindowQual.xaml</DependentUpon>
+    <Compile Include="View\WindowFac.xaml.cs">
+      <DependentUpon>WindowFac.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\WindowSpec.xaml.cs">
-      <DependentUpon>WindowSpec.xaml</DependentUpon>
+    <Compile Include="View\WindowChair.xaml.cs">
+      <DependentUpon>WindowChair.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -87,28 +88,28 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\WindowForm.xaml">
+    <Page Include="View\WindowPost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\WindowGroup.xaml">
+    <Page Include="View\WindowTeacher.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\WindowQual.xaml">
+    <Page Include="View\WindowFac.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\WindowSpec.xaml">
+    <Page Include="View\WindowChair.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\FormEducation.cs" />
-    <Compile Include="Model\Group.cs" />
-    <Compile Include="Model\Qualification.cs" />
-    <Compile Include="Model\Speciality.cs" />
+    <Compile Include="Model\Post.cs" />
+    <Compile Include="Model\Teacher.cs" />
+    <Compile Include="Model\Faculty.cs" />
+    <Compile Include="Model\Chair.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

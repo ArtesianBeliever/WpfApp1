@@ -7,16 +7,16 @@ using WpfApp1.Model;
 
 namespace WpfApp1.Helper
 {
-    class FindQual
+    class FindFaculty
     {
         int id;
-        public FindQual(int id)
+        public FindFaculty(int id)
         {
             this.id = id;
         }
-        public bool QualPredicate(Qualification qualification)
+        public bool FacultyPredicate(Faculty faculty)
         {
-            return qualification.Id == id;
+            return faculty.Id == id;
         }
     }
 }

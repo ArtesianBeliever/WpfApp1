@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Model
 {
-    class FormEducation
+    class Post
     {
         public int Id { get; set; }
-        public string NameForm { get; set; }
-        public FormEducation ( ) { }
-        public FormEducation ( int id, string nameForm)
+        public string NamePost { get; set; }
+        public Post() { }
+        public Post(int id, string namePost)
         {
             this.Id = id;
-            this.NameForm = nameForm;
+            this.NamePost = namePost;
         }
     }
 }

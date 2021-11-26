@@ -7,16 +7,16 @@ using WpfApp1.Model;
 
 namespace WpfApp1.Helper
 {
-    class FindForm
+    class FindPost
     {
         int id;
-        public FindForm(int id)
+        public FindPost(int id)
         {
             this.id = id;
         }
-        public bool FormPredicate(FormEducation formEducation)
+        public bool PostPredicate(Post post)
         {
-            return formEducation.Id == id;
+            return post.Id == id;
         }
     }
 }
