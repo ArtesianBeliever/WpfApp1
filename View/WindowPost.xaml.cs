@@ -31,7 +31,7 @@ namespace WpfApp1.View
         {
             NewPost wnPost = new NewPost
             {
-                Title = "Новая Квалификация",
+                Title = "Новая Должность",
                 Owner = this
             };
             // формирование кода новой должности
@@ -50,7 +50,7 @@ namespace WpfApp1.View
         {
             NewPost wnPost = new NewPost
             {
-                Title = "Редактирование Квалификации",
+                Title = "Редактирование Должности",
                 Owner = this
             };
             Post qual = lvPost.SelectedItem as Post;
@@ -68,7 +68,7 @@ namespace WpfApp1.View
             }
             else
             {
-                MessageBox.Show("Необходимо выбрать квалификацию для редактированния",
+                MessageBox.Show("Необходимо выбрать Должность для редактированния",
                 "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
@@ -77,7 +77,7 @@ namespace WpfApp1.View
             Post qual = (Post)lvPost.SelectedItem;
             if (qual != null)
             {
-                MessageBoxResult result = MessageBox.Show("Удалить данные по квалификации: " +
+                MessageBoxResult result = MessageBox.Show("Удалить данные по Должности: " +
                 qual.NamePost, "Предупреждение", MessageBoxButton.OKCancel,
                 MessageBoxImage.Warning);
                 if (result == MessageBoxResult.OK)
@@ -87,7 +87,7 @@ namespace WpfApp1.View
             }
             else
             {
-                MessageBox.Show("Необходимо выбрать квалификацию для удаления",
+                MessageBox.Show("Необходимо выбрать Должность для удаления",
                 "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
