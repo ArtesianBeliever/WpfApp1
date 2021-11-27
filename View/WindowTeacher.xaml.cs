@@ -26,11 +26,9 @@ namespace WpfApp1.View
         private TeacherVM vmTeach;
         private ChairVM vmChair;
         private PostVM vmPost;
-    //    private FormEducationVM vmForm;
         private ObservableCollection<TeacherDPO> teachDPO;
         private List<Chair> chairs;
         private List<Post> posts;
-    //    private List<FormEducation> forms;
 
         public WindowGroup()
         {
@@ -38,10 +36,8 @@ namespace WpfApp1.View
             vmTeach = new TeacherVM();
             vmChair = new ChairVM();
             vmPost = new PostVM();
-        //    vmForm = new FormEducationVM();
             chairs = vmChair.ListChair.ToList();
             posts = vmPost.ListPost.ToList();
- //           forms = vmForm.ListFormEducation.ToList();
             // Формирование данных для отображения сотрудников с должностями
             // на базе коллекции класса ListPerson<Person>
             teachDPO = new ObservableCollection<TeacherDPO>();
@@ -69,15 +65,14 @@ namespace WpfApp1.View
             wnEmployee.DataContext = gr;
             wnEmployee.CbChair.ItemsSource = chairs;
             wnEmployee.CbPost.ItemsSource = posts;
-     //       wnEmployee.CbForm.ItemsSource = forms;
+
             if (wnEmployee.ShowDialog() == true)
             {
                 Chair s = (Chair)wnEmployee.CbChair.SelectedValue;
                 gr.NameChair = s.NameChair;
                 Post q = (Post)wnEmployee.CbPost.SelectedValue;
                 gr.NamePost = q.NamePost;
-          //      FormEducation f = (FormEducation)wnEmployee.CbForm.SelectedValue;
-            //    gr.FormEducation = f.NameForm;
+
                 teachDPO.Add(gr);
                 Teacher p = new Teacher();
                 p = p.CopyFromTeacherDPO(gr);
@@ -101,8 +96,6 @@ namespace WpfApp1.View
                 wnEmployee.CbChair.Text = tempPerDPO.NameChair;
                 wnEmployee.CbPost.ItemsSource = posts;
                 wnEmployee.CbPost.Text = tempPerDPO.NamePost;
-       //         wnEmployee.CbForm.ItemsSource = forms;
-       //         wnEmployee.CbForm.Text = tempPerDPO.FormEducation;
                 if (wnEmployee.ShowDialog() == true)
                 {
                     // перенос данных из временного класса в класс отображения данных
@@ -110,8 +103,6 @@ namespace WpfApp1.View
                     perDPO.NameChair = r.NameChair;
                     Post q = (Post)wnEmployee.CbPost.SelectedValue;
                     perDPO.NamePost = q.NamePost;
-               //     FormEducation f = (FormEducation)wnEmployee.CbForm.SelectedValue;
-               //     perDPO.FormEducation = f.NameForm;
                     perDPO.FirstName = tempPerDPO.FirstName;
                     perDPO.SecondName = tempPerDPO.SecondName;
                     perDPO.LastName = tempPerDPO.LastName;
@@ -144,7 +135,6 @@ namespace WpfApp1.View
                 {
                     // удаление данных в списке отображения данных
                     teachDPO.Remove(person);
-                    // удаление данных в списке классов ListPerson<Person>
                     Teacher per = new Teacher();
                     per = per.CopyFromTeacherDPO(person);
                     vmTeach.ListTeacher.Remove(per);
