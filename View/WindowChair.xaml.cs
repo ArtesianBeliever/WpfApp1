@@ -106,7 +106,7 @@ namespace WpfApp1.View
             }
             else
             {
-                MessageBox.Show("Необходимо выбрать сотрудника для редактированния",
+                MessageBox.Show("Необходимо выбрать кафедру для редактированния",
                 "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
@@ -116,7 +116,7 @@ namespace WpfApp1.View
             ChairDPO person = (ChairDPO)lvChair.SelectedItem;
             if (person != null)
             {
-                MessageBoxResult result = MessageBox.Show("Удалить данные сотрудника: \n" + person.NameChair  + " ",
+                MessageBoxResult result = MessageBox.Show("Удалить данные кафедры: \n" + person.NameChair  + " ",
                 "Предупреждение", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
                 if (result == MessageBoxResult.OK)
                 {
@@ -129,7 +129,7 @@ namespace WpfApp1.View
             }
             else
             {
-                MessageBox.Show("Необходимо выбрать данные сотрудника для удаления",
+                MessageBox.Show("Необходимо выбрать данные кафдерды для удаления",
                 "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }

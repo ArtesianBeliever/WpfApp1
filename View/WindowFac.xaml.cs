@@ -32,7 +32,7 @@ namespace WpfApp1.View
         {
             NewFaculty wnForm = new NewFaculty
             {
-                Title = "Новая Форма",
+                Title = "Новый факультет",
                 Owner = this
             };
             // формирование кода новой формы
@@ -51,7 +51,7 @@ namespace WpfApp1.View
         {
             NewFaculty wnForm = new NewFaculty
             {
-                Title = "Редактирование Формы",
+                Title = "Редактирование факультета",
                 Owner = this
             };
             Faculty form = lvFaculty.SelectedItem as Faculty;
@@ -70,7 +70,7 @@ namespace WpfApp1.View
             }
             else
             {
-                MessageBox.Show("Необходимо выбрать Форму для редактированния",
+                MessageBox.Show("Необходимо выбрать факультет для редактированния",
                 "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
@@ -79,7 +79,7 @@ namespace WpfApp1.View
             Faculty form = (Faculty)lvFaculty.SelectedItem;
             if (form != null)
             {
-                MessageBoxResult result = MessageBox.Show("Удалить данные по форме: " +
+                MessageBoxResult result = MessageBox.Show("Удалить данные по факультету: " +
                 form.NameFaculty, "Предупреждение", MessageBoxButton.OKCancel,
                 MessageBoxImage.Warning);
                 if (result == MessageBoxResult.OK)
@@ -89,7 +89,7 @@ namespace WpfApp1.View
             }
             else
             {
-                MessageBox.Show("Необходимо выбрать форму для удаления",
+                MessageBox.Show("Необходимо выбрать факультет для удаления",
                 "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
