@@ -24,27 +24,27 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            
+
         }
-        private void Teacher_OnClick(object sender, RoutedEventArgs e)
+        private void Group_OnClick(object sender, RoutedEventArgs e)
         {
-            WindowTeacher wTeacher = new WindowTeacher();
-            wTeacher.Show();
+            WindowTeacher wGroup = new WindowTeacher();
+            wGroup.Show();
         }
-        private void Chair_OnClick(object sender, RoutedEventArgs e)
+        private void Form_OnClick(object sender, RoutedEventArgs e)
         {
-            WindowChair wChair = new WindowChair();
-            wChair.Show();
+            WindowChair wForm = new WindowChair();
+            wForm.Show();
         }
-        private void Faculty_OnClick(object sender, RoutedEventArgs e)
+        private void Spec_OnClick(object sender, RoutedEventArgs e)
         {
-            WindowFaculty wFaculty = new WindowFaculty();
-            wFaculty.Show();
+            WindowPost wSpec = new WindowPost();
+            wSpec.Show();
         }
         private void Qual_OnClick(object sender, RoutedEventArgs e)
         {
-            WindowPost wPost = new WindowPost();
-            wPost.Show();
+            WindowFaculty wQual = new WindowFaculty();
+            wQual.Show();
         }
     }
 }
