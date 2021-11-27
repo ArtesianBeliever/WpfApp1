@@ -33,12 +33,12 @@ namespace WpfApp1
         }
         private void Form_OnClick(object sender, RoutedEventArgs e)
         {
-            WindowChair wForm = new WindowChair();
+            WindowSpec wForm = new WindowSpec();
             wForm.Show();
         }
         private void Spec_OnClick(object sender, RoutedEventArgs e)
         {
-            WindowSpec wSpec = new WindowSpec();
+            WindowChair wSpec = new WindowChair();
             wSpec.Show();
         }
         private void Qual_OnClick(object sender, RoutedEventArgs e)
