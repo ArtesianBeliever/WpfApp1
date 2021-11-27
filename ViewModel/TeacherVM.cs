@@ -10,6 +10,18 @@ namespace WpfApp1.ViewModel
 {
     class TeacherVM
     {
+        public int MaxId()
+        {
+            int max = 0;
+            foreach (var r in this.ListTeacher)
+            {
+                if (max < r.Id)
+                {
+                    max = r.Id;
+                };
+            }
+            return max;
+        }
         public ObservableCollection<Teacher> ListTeacher
         {
             get;

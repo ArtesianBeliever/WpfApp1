@@ -8,6 +8,15 @@
         Title="Группы" Height="450" Width="800">
     <Grid>
         <StackPanel>
+            <Button x:Name="btnAdd" Margin="10,10,5,10" Content="Добавить"
+ Height="25"
+ Click="btnAdd_Click"/>
+            <Button x:Name="btnEdit" Margin="10,10,5,10" Content="Редактировать"
+ Height="25" Click="btnEdit_Click"/>
+            <Button x:Name="btnDelete" Margin="10,10,5,10" Content="Удалить"
+Height="25"
+ Click="btnDelete_Click"/>
+
             <ListView x:Name="lvGroup">
                 <ListView.View>
                     <GridView>

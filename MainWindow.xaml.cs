@@ -38,7 +38,7 @@ namespace WpfApp1
         }
         private void Spec_OnClick(object sender, RoutedEventArgs e)
         {
-            WindowSpec wSpec = new WindowSpec();
+            WindowPost wSpec = new WindowPost();
             wSpec.Show();
         }
         private void Qual_OnClick(object sender, RoutedEventArgs e)

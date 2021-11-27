@@ -55,20 +55,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helper\FindTeacher.cs" />
     <Compile Include="Helper\FindPost.cs" />
     <Compile Include="Helper\FindFaculty.cs" />
     <Compile Include="Helper\FindChair.cs" />
     <Compile Include="Model\TeacherDPO.cs" />
     <Compile Include="Model\ChairDPO.cs" />
     <Compile Include="ViewModel\FacultyVM.cs" />
-    <Compile Include="ViewModel\FromEducationVM.cs" />
-    <Compile Include="ViewModel\QualificationVM.cs" />
-    <Compile Include="ViewModel\SpecialityVM.cs" />
+    <Compile Include="ViewModel\ChairVM.cs" />
+    <Compile Include="ViewModel\PostVM.cs" />
+    <Compile Include="ViewModel\TeacherVM.cs" />
+    <Compile Include="View\NewChair.xaml.cs">
+      <DependentUpon>NewChair.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\NewFaculty.xaml.cs">
       <DependentUpon>NewFaculty.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\NewPost.xaml.cs">
       <DependentUpon>NewPost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewTeach.xaml.cs">
+      <DependentUpon>NewTeach.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WindowPost.xaml.cs">
       <DependentUpon>WindowPost.xaml</DependentUpon>
@@ -94,11 +101,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\NewChair.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\NewFaculty.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\NewPost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NewTeach.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

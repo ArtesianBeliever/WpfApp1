@@ -19,10 +19,10 @@ namespace WpfApp1.View
     /// <summary>
     /// Логика взаимодействия для WindowForm.xaml
     /// </summary>
-    public partial class WindowChair : Window
+    public partial class WindowPost : Window
     {
         PostVM vmPost = new PostVM();
-        public WindowChair()
+        public WindowPost()
         {
             InitializeComponent();
             lvPost.ItemsSource = vmPost.ListPost;

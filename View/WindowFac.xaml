@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
-        Title="WindowQual" Height="450" Width="400">
+        Title="Факультеты" Height="450" Width="400">
     <StackPanel Background="#FFD8D8D8">
         <StackPanel Orientation="Horizontal" Background="#FFE4E0E0">
             <Button x:Name="btnAdd" Margin="10,10,5,10" Content="Добавить"

@@ -3,11 +3,63 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfApp1.ViewModel;
 
 namespace WpfApp1.Model
 {
     class TeacherDPO
     {
+        public TeacherDPO ShallowCopy()
+        {
+            return (TeacherDPO)this.MemberwiseClone();
+        }
+        public TeacherDPO CopyFromTeacher(Teacher teacher)
+        {
+            TeacherDPO teachDPO = new TeacherDPO();
+            ChairVM vmChair = new ChairVM();
+            PostVM vmPost = new PostVM();
+       //     FormEducationVM vmForm = new FormEducationVM();
+            string chair = string.Empty;
+            string post = string.Empty;
+       //     string form = string.Empty;
+            foreach (var r in vmChair.ListChair)
+            {
+                if (r.Id == teacher.IdChair)
+                {
+                    chair = r.NameChair;
+                    break;
+                }
+            }
+            foreach (var q in vmPost.ListPost)
+            {
+                if (q.Id == teacher.IdPost)
+                {
+                    post = q.NamePost;
+                    break;
+                }
+            }
+      //      foreach (var f in vmForm.ListFormEducation)
+      //      {
+      //          if (f.Id == teacher.IdFormEducation)
+      //          {
+      //              form = f.NameForm;
+      //              break;
+        //        }
+          //  }
+            if (chair != string.Empty || post != string.Empty )
+            {
+                teachDPO.Id = teacher.Id;
+                teachDPO.NameChair = chair;
+                teachDPO.NamePost = post;
+                teachDPO.FirstName = teacher.FirstName;
+                teachDPO.SecondName = teacher.SecondName;
+                teachDPO.LastName = teacher.LastName;
+                teachDPO.Phone = teacher.Phone;
+                teachDPO.EMail = teacher.EMail;
+       //         teachDPO.CountSubgroup = teacher.CountSubgroup;
+            }
+            return teachDPO;
+        }
         public int Id { get; set; }
         public string NameChair { get; set; }
         public string NamePost { get; set; }

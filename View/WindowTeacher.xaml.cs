@@ -23,56 +23,139 @@ namespace WpfApp1.View
     /// </summary>
     public partial class WindowGroup : Window
     {
+        private TeacherVM vmTeach;
+        private ChairVM vmChair;
+        private PostVM vmPost;
+    //    private FormEducationVM vmForm;
+        private ObservableCollection<TeacherDPO> teachDPO;
+        private List<Chair> chairs;
+        private List<Post> posts;
+    //    private List<FormEducation> forms;
+
         public WindowGroup()
         {
             InitializeComponent();
-            TeacherVM vmTeacher = new TeacherVM();
-      ///      lvGroup.ItemsSource = vmGroup.ListGroup;
-            ChairVM vmChair = new ChairVM();
-            PostVM vmPost = new PostVM();
-     ///       FormEducationVM vmForms = new FormEducationVM();
-            List<Chair> chairs = new List<Chair>();
-            List<Post> posts = new List<Post>();
-      ///      List<FormEducation> forms = new List<FormEducation>();
-            foreach (Chair s in vmChair.ListChair)
+            vmTeach = new TeacherVM();
+            vmChair = new ChairVM();
+            vmPost = new PostVM();
+        //    vmForm = new FormEducationVM();
+            chairs = vmChair.ListChair.ToList();
+            posts = vmPost.ListPost.ToList();
+ //           forms = vmForm.ListFormEducation.ToList();
+            // Формирование данных для отображения сотрудников с должностями
+            // на базе коллекции класса ListPerson<Person>
+            teachDPO = new ObservableCollection<TeacherDPO>();
+            foreach (var teacher in vmTeach.ListTeacher)
             {
-                chairs.Add(s);
+                TeacherDPO p = new TeacherDPO();
+                p = p.CopyFromTeacher(teacher);
+                teachDPO.Add(p);
             }
-            foreach (Post q in vmPost.ListPost)
+            lvGroup.ItemsSource = teachDPO;
+        }
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            NewTeach wnEmployee = new NewTeach
             {
-                posts.Add(q);
+                Title = "Новый преподаватель",
+                Owner = this
+            };
+            // формирование кода нового сотрудника
+            int maxIdPerson = vmTeach.MaxId() + 1;
+            TeacherDPO gr = new TeacherDPO
+            {
+                Id = maxIdPerson,
+            };
+            wnEmployee.DataContext = gr;
+            wnEmployee.CbChair.ItemsSource = chairs;
+            wnEmployee.CbPost.ItemsSource = posts;
+     //       wnEmployee.CbForm.ItemsSource = forms;
+            if (wnEmployee.ShowDialog() == true)
+            {
+                Chair s = (Chair)wnEmployee.CbChair.SelectedValue;
+                gr.NameChair = s.NameChair;
+                Post q = (Post)wnEmployee.CbPost.SelectedValue;
+                gr.NamePost = q.NamePost;
+          //      FormEducation f = (FormEducation)wnEmployee.CbForm.SelectedValue;
+            //    gr.FormEducation = f.NameForm;
+                teachDPO.Add(gr);
+                Teacher p = new Teacher();
+                p = p.CopyFromTeacherDPO(gr);
+                vmTeach.ListTeacher.Add(p);
             }
-          //  foreach (FormEducation f in vmForms.ListFormEducation)
-           // {
-         //       forms.Add(f)
-      //     }
-           
-            ObservableCollection<TeacherDPO> groups = new ObservableCollection<TeacherDPO>();
-            FindChair finder1;
-            FindPost finder2;
-   //         FindPost finder3;
-            foreach (var p in vmTeacher.ListTeacher)
+        }
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            NewTeach wnEmployee = new NewTeach
             {
-                finder1 = new FindChair(p.IdChair);
-                Chair cha = chairs.Find(new Predicate<Chair>(finder1.ChairPredicate));
-                finder2 = new FindPost(p.IdPost);
-                Post pos = posts.Find(new Predicate<Post>(finder2.PostPredicate));
-        //        finder3 = new FindForm(p.IdFormEducation);
-          //      FormEducation forma = forms.Find(new Predicate<FormEducation>(finder3.FormPredicate));
-                groups.Add(new TeacherDPO
+                Title = "Редактирование данных",
+                Owner = this
+            };
+            TeacherDPO perDPO = (TeacherDPO)lvGroup.SelectedValue;
+            TeacherDPO tempPerDPO; // временный класс для редактирования
+            if (perDPO != null)
+            {
+                tempPerDPO = perDPO.ShallowCopy();
+                wnEmployee.DataContext = tempPerDPO;
+                wnEmployee.CbChair.ItemsSource = chairs;
+                wnEmployee.CbChair.Text = tempPerDPO.NameChair;
+                wnEmployee.CbPost.ItemsSource = posts;
+                wnEmployee.CbPost.Text = tempPerDPO.NamePost;
+       //         wnEmployee.CbForm.ItemsSource = forms;
+       //         wnEmployee.CbForm.Text = tempPerDPO.FormEducation;
+                if (wnEmployee.ShowDialog() == true)
                 {
-                    Id = p.Id,
-                    NameChair = cha.NameChair,
-                    NamePost = pos.NamePost,
-                    FirstName = p.FirstName,
-                    SecondName = p.SecondName,
-                    LastName = p.LastName,
-                    Phone = p.Phone,
-                    EMail = p.EMail
-                });
+                    // перенос данных из временного класса в класс отображения данных
+                    Chair r = (Chair)wnEmployee.CbChair.SelectedValue;
+                    perDPO.NameChair = r.NameChair;
+                    Post q = (Post)wnEmployee.CbPost.SelectedValue;
+                    perDPO.NamePost = q.NamePost;
+               //     FormEducation f = (FormEducation)wnEmployee.CbForm.SelectedValue;
+               //     perDPO.FormEducation = f.NameForm;
+                    perDPO.FirstName = tempPerDPO.FirstName;
+                    perDPO.SecondName = tempPerDPO.SecondName;
+                    perDPO.LastName = tempPerDPO.LastName;
+                    perDPO.Phone = tempPerDPO.Phone;
+                    perDPO.EMail = tempPerDPO.EMail;
+                    lvGroup.ItemsSource = null;
+                    lvGroup.ItemsSource = teachDPO;
+                    // перенос данных из класса отображения данных в класс Person
+                    FindTeacher finder = new FindTeacher(perDPO.Id);
+                    List<Teacher> listPerson = vmTeach.ListTeacher.ToList();
+                    Teacher p = listPerson.Find(new Predicate<Teacher>(finder.PersonPredicate));
+                    p = p.CopyFromTeacherDPO(perDPO);
+                }
             }
-            lvGroup.ItemsSource = groups;
+            else
+            {
+                MessageBox.Show("Необходимо выбрать сотрудника для редактированния",
+                "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
 
         }
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            TeacherDPO person = (TeacherDPO)lvGroup.SelectedItem;
+            if (person != null)
+            {
+                MessageBoxResult result = MessageBox.Show("Удалить данные сотрудника: \n" + person.FirstName + person.LastName + " ",
+                "Предупреждение", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.OK)
+                {
+                    // удаление данных в списке отображения данных
+                    teachDPO.Remove(person);
+                    // удаление данных в списке классов ListPerson<Person>
+                    Teacher per = new Teacher();
+                    per = per.CopyFromTeacherDPO(person);
+                    vmTeach.ListTeacher.Remove(per);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Необходимо выбрать данные сотрудника для удаления",
+                "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
     }
 }

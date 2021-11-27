@@ -10,6 +10,18 @@ namespace WpfApp1.ViewModel
 {
     class ChairVM
     {
+        public int MaxId()
+        {
+            int max = 0;
+            foreach (var r in this.ListChair)
+            {
+                if (max < r.Id)
+                {
+                    max = r.Id;
+                };
+            }
+            return max;
+        }
         public ObservableCollection<Chair> ListChair
         {
             get;
