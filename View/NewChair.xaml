@@ -24,13 +24,13 @@
  Text="Код:" HorizontalAlignment="Right"
  VerticalAlignment="Center" Margin="5"/>
         <TextBlock Grid.Row="1" Grid.Column="0"
- Text="Специализация:" HorizontalAlignment="Right"
+ Text="Факультет:" HorizontalAlignment="Right"
  VerticalAlignment="Center" Margin="5"/>
         <TextBlock Grid.Row="2" Grid.Column="0"
- Text="Факультет:" HorizontalAlignment="Right"
+ Text="Название Кафедры:" HorizontalAlignment="Right"
  VerticalAlignment="Center" Margin="0,11,10,14"/>
         <TextBlock Grid.Row="3" Grid.Column="0"
- Text="Имя группы:" HorizontalAlignment="Right"
+ Text="Сокращение:" HorizontalAlignment="Right"
  VerticalAlignment="Center" Margin="0,11,10,14" RenderTransformOrigin="0.703,0.538"/>
         <TextBox x:Name="TbId" Grid.Row="0" Grid.Column="1"
  Text="{Binding Id}" Height="20" Width="50"

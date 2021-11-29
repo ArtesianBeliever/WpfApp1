@@ -18,10 +18,8 @@ namespace WpfApp1.Model
             TeacherDPO teachDPO = new TeacherDPO();
             ChairVM vmChair = new ChairVM();
             PostVM vmPost = new PostVM();
-       //     FormEducationVM vmForm = new FormEducationVM();
             string chair = string.Empty;
             string post = string.Empty;
-       //     string form = string.Empty;
             foreach (var r in vmChair.ListChair)
             {
                 if (r.Id == teacher.IdChair)
@@ -38,14 +36,6 @@ namespace WpfApp1.Model
                     break;
                 }
             }
-      //      foreach (var f in vmForm.ListFormEducation)
-      //      {
-      //          if (f.Id == teacher.IdFormEducation)
-      //          {
-      //              form = f.NameForm;
-      //              break;
-        //        }
-          //  }
             if (chair != string.Empty || post != string.Empty )
             {
                 teachDPO.Id = teacher.Id;
@@ -56,7 +46,6 @@ namespace WpfApp1.Model
                 teachDPO.LastName = teacher.LastName;
                 teachDPO.Phone = teacher.Phone;
                 teachDPO.EMail = teacher.EMail;
-       //         teachDPO.CountSubgroup = teacher.CountSubgroup;
             }
             return teachDPO;
         }

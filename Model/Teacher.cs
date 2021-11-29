@@ -13,10 +13,8 @@ namespace WpfApp1.Model
         {
             ChairVM vmChair = new ChairVM();
             PostVM vmPost = new PostVM();
-   //         FormEducationVM vmForm = new FormEducationVM();
             int chairId = 0;
             int postId = 0;
-     //      int formId = 0;
             foreach (var s in vmChair.ListChair)
             {
                 if (s.NameChair == p.NameChair)
@@ -33,14 +31,6 @@ namespace WpfApp1.Model
                     break;
                 }
             }
-   //        foreach (var f in vmForm.ListFormEducation)
-    //        {
-      //          if (f.NameForm == p.FormEducation)
-        //        {
-          //          formId = f.Id;
-            //        break;
-              //  }
-            //}
             if (chairId != 0 || postId != 0)
             {
                 this.Id = p.Id;
@@ -51,7 +41,6 @@ namespace WpfApp1.Model
                 this.LastName = p.LastName;
                 this.Phone = p.Phone;
                 this.EMail = p.EMail;
-        //        this.CountSubgroup = p.CountSubgroup;
             }
             return this;
         }
