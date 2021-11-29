@@ -27,13 +27,10 @@ namespace WpfApp1.View
         {
             InitializeComponent();
             TeacherVM vmTeacher = new TeacherVM();
-      ///      lvGroup.ItemsSource = vmGroup.ListGroup;
             ChairVM vmChair = new ChairVM();
             PostVM vmPost = new PostVM();
-     ///       FormEducationVM vmForms = new FormEducationVM();
             List<Chair> chairs = new List<Chair>();
             List<Post> posts = new List<Post>();
-      ///      List<FormEducation> forms = new List<FormEducation>();
             foreach (Chair s in vmChair.ListChair)
             {
                 chairs.Add(s);
@@ -42,23 +39,16 @@ namespace WpfApp1.View
             {
                 posts.Add(q);
             }
-          //  foreach (FormEducation f in vmForms.ListFormEducation)
-           // {
-         //       forms.Add(f)
-      //     }
            
             ObservableCollection<TeacherDPO> groups = new ObservableCollection<TeacherDPO>();
             FindChair finder1;
             FindPost finder2;
-   //         FindPost finder3;
             foreach (var p in vmTeacher.ListTeacher)
             {
                 finder1 = new FindChair(p.IdChair);
                 Chair cha = chairs.Find(new Predicate<Chair>(finder1.ChairPredicate));
                 finder2 = new FindPost(p.IdPost);
                 Post pos = posts.Find(new Predicate<Post>(finder2.PostPredicate));
-        //        finder3 = new FindForm(p.IdFormEducation);
-          //      FormEducation forma = forms.Find(new Predicate<FormEducation>(finder3.FormPredicate));
                 groups.Add(new TeacherDPO
                 {
                     Id = p.Id,
