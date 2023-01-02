@@ -23,27 +23,27 @@ namespace WpfApp1.View
     /// </summary>
     public partial class WindowGroup : Window
     {
-        private TeacherVM vmTeach;
+        private DisciplineVM vmTeach;
         private ChairVM vmChair;
-        private PostVM vmPost;
-        private ObservableCollection<TeacherDPO> teachDPO;
+        private CurriculumVM vmPost;
+        private ObservableCollection<DisciplineDPO> teachDPO;
         private List<Chair> chairs;
-        private List<Post> posts;
+        private List<Curriculum> posts;
 
         public WindowGroup()
         {
             InitializeComponent();
-            vmTeach = new TeacherVM();
+            vmTeach = new DisciplineVM();
             vmChair = new ChairVM();
-            vmPost = new PostVM();
+            vmPost = new CurriculumVM();
             chairs = vmChair.ListChair.ToList();
             posts = vmPost.ListPost.ToList();
             // Формирование данных для отображения сотрудников с должностями
             // на базе коллекции класса ListPerson<Person>
-            teachDPO = new ObservableCollection<TeacherDPO>();
-            foreach (var teacher in vmTeach.ListTeacher)
+            teachDPO = new ObservableCollection<DisciplineDPO>();
+            foreach (var teacher in vmTeach.ListDiscipline)
             {
-                TeacherDPO p = new TeacherDPO();
+                DisciplineDPO p = new DisciplineDPO();
                 p = p.CopyFromTeacher(teacher);
                 teachDPO.Add(p);
             }
@@ -58,7 +58,7 @@ namespace WpfApp1.View
             };
             // формирование кода нового сотрудника
             int maxIdPerson = vmTeach.MaxId() + 1;
-            TeacherDPO gr = new TeacherDPO
+            DisciplineDPO gr = new DisciplineDPO
             {
                 Id = maxIdPerson,
             };
@@ -70,13 +70,13 @@ namespace WpfApp1.View
             {
                 Chair s = (Chair)wnEmployee.CbChair.SelectedValue;
                 gr.NameChair = s.NameChair;
-                Post q = (Post)wnEmployee.CbPost.SelectedValue;
-                gr.NamePost = q.NamePost;
+                Curriculum q = (Curriculum)wnEmployee.CbPost.SelectedValue;
+                gr.NameCurriculum = q.NameCurriculum;
 
                 teachDPO.Add(gr);
-                Teacher p = new Teacher();
+                Discipline p = new Discipline();
                 p = p.CopyFromTeacherDPO(gr);
-                vmTeach.ListTeacher.Add(p);
+                vmTeach.ListDiscipline.Add(p);
             }
         }
         private void btnEdit_Click(object sender, RoutedEventArgs e)
@@ -86,8 +86,8 @@ namespace WpfApp1.View
                 Title = "Редактирование данных",
                 Owner = this
             };
-            TeacherDPO perDPO = (TeacherDPO)lvGroup.SelectedValue;
-            TeacherDPO tempPerDPO; // временный класс для редактирования
+            DisciplineDPO perDPO = (DisciplineDPO)lvGroup.SelectedValue;
+            DisciplineDPO tempPerDPO; // временный класс для редактирования
             if (perDPO != null)
             {
                 tempPerDPO = perDPO.ShallowCopy();
@@ -95,25 +95,28 @@ namespace WpfApp1.View
                 wnEmployee.CbChair.ItemsSource = chairs;
                 wnEmployee.CbChair.Text = tempPerDPO.NameChair;
                 wnEmployee.CbPost.ItemsSource = posts;
-                wnEmployee.CbPost.Text = tempPerDPO.NamePost;
+                wnEmployee.CbPost.Text = tempPerDPO.NameCurriculum;
                 if (wnEmployee.ShowDialog() == true)
                 {
                     // перенос данных из временного класса в класс отображения данных
                     Chair r = (Chair)wnEmployee.CbChair.SelectedValue;
                     perDPO.NameChair = r.NameChair;
-                    Post q = (Post)wnEmployee.CbPost.SelectedValue;
-                    perDPO.NamePost = q.NamePost;
-                    perDPO.FirstName = tempPerDPO.FirstName;
-                    perDPO.SecondName = tempPerDPO.SecondName;
-                    perDPO.LastName = tempPerDPO.LastName;
-                    perDPO.Phone = tempPerDPO.Phone;
-                    perDPO.EMail = tempPerDPO.EMail;
+                    Curriculum q = (Curriculum)wnEmployee.CbPost.SelectedValue;
+                    perDPO.NameCurriculum = q.NameCurriculum;
+                    perDPO.NameDiscipline = tempPerDPO.NameDiscipline;
+                    perDPO.Course = tempPerDPO.Course;
+                    perDPO.Semester = tempPerDPO.Semester;
+                    perDPO.Lecture = tempPerDPO.Lecture;
+                    perDPO.Laboratory = tempPerDPO.Laboratory;
+                    perDPO.Practical = tempPerDPO.Practical;
+                    perDPO.Examen = tempPerDPO.Examen;
+                    perDPO.SetOff = tempPerDPO.SetOff;
                     lvGroup.ItemsSource = null;
                     lvGroup.ItemsSource = teachDPO;
                     // перенос данных из класса отображения данных в класс Person
-                    FindTeacher finder = new FindTeacher(perDPO.Id);
-                    List<Teacher> listPerson = vmTeach.ListTeacher.ToList();
-                    Teacher p = listPerson.Find(new Predicate<Teacher>(finder.PersonPredicate));
+                    FindDiscipline finder = new FindDiscipline(perDPO.Id);
+                    List<Discipline> listPerson = vmTeach.ListDiscipline.ToList();
+                    Discipline p = listPerson.Find(new Predicate<Discipline>(finder.PersonPredicate));
                     p = p.CopyFromTeacherDPO(perDPO);
                 }
             }
@@ -126,18 +129,18 @@ namespace WpfApp1.View
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            TeacherDPO person = (TeacherDPO)lvGroup.SelectedItem;
+            DisciplineDPO person = (DisciplineDPO)lvGroup.SelectedItem;
             if (person != null)
             {
-                MessageBoxResult result = MessageBox.Show("Удалить данные сотрудника: \n" + person.FirstName + person.LastName + " ",
+                MessageBoxResult result = MessageBox.Show("Удалить данные о дисциплине: \n" + person.NameDiscipline,
                 "Предупреждение", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
                 if (result == MessageBoxResult.OK)
                 {
                     // удаление данных в списке отображения данных
                     teachDPO.Remove(person);
-                    Teacher per = new Teacher();
+                    Discipline per = new Discipline();
                     per = per.CopyFromTeacherDPO(person);
-                    vmTeach.ListTeacher.Remove(per);
+                    vmTeach.ListDiscipline.Remove(per);
                 }
             }
             else

@@ -7,18 +7,16 @@ using WpfApp1.Model;
 
 namespace WpfApp1.Helper
 {
-    class FindTeacher
+    class FindCurriculum
     {
         int id;
-        public FindTeacher(int id)
+        public FindCurriculum(int id)
         {
             this.id = id;
-
         }
-        public bool PersonPredicate(Teacher teacher)
+        public bool PostPredicate(Curriculum curr)
         {
-            return teacher.Id == id;
+            return curr.Id == id;
         }
-
     }
 }

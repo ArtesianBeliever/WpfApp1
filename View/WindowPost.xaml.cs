@@ -21,7 +21,7 @@ namespace WpfApp1.View
     /// </summary>
     public partial class WindowPost : Window
     {
-        PostVM vmPost = new PostVM();
+        CurriculumVM vmPost = new CurriculumVM();
         public WindowPost()
         {
             InitializeComponent();
@@ -36,7 +36,7 @@ namespace WpfApp1.View
             };
             // формирование кода новой должности
             int maxIdQual = vmPost.MaxIdQ() + 1;
-            Post qual = new Post
+            Curriculum qual = new Curriculum
             {
                 Id = maxIdQual
             };
@@ -53,15 +53,15 @@ namespace WpfApp1.View
                 Title = "Редактирование должности",
                 Owner = this
             };
-            Post qual = lvPost.SelectedItem as Post;
+            Curriculum qual = lvPost.SelectedItem as Curriculum;
             if (qual != null)
             {
-                Post tempQual = qual.ShallowCopy();
+                Curriculum tempQual = qual.ShallowCopy();
                 wnPost.DataContext = tempQual;
                 if (wnPost.ShowDialog() == true)
                 {
                     // сохранение данных
-                    qual.NamePost = tempQual.NamePost;
+                    qual.NameCurriculum = tempQual.NameCurriculum;
                     lvPost.ItemsSource = null;
                     lvPost.ItemsSource = vmPost.ListPost;
                 }
@@ -74,11 +74,11 @@ namespace WpfApp1.View
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            Post qual = (Post)lvPost.SelectedItem;
+            Curriculum qual = (Curriculum)lvPost.SelectedItem;
             if (qual != null)
             {
                 MessageBoxResult result = MessageBox.Show("Удалить данные по должности: " +
-                qual.NamePost, "Предупреждение", MessageBoxButton.OKCancel,
+                qual.NameCurriculum, "Предупреждение", MessageBoxButton.OKCancel,
                 MessageBoxImage.Warning);
                 if (result == MessageBoxResult.OK)
                 {

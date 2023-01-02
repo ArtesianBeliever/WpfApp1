@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
-        Title="Должности" Height="250" Width="300">
+        Title="Должности" Height="350" Width="600">
     <StackPanel Background="#FFD8D8D8">
         <StackPanel Orientation="Horizontal" Background="#FFE4E0E0">
             <Button x:Name="btnAdd" Margin="10,10,5,10" Content="Добавить"
@@ -25,7 +25,18 @@ Height="25"
                         <GridViewColumn Header="Код" Width="50"
  DisplayMemberBinding="{Binding Id}"/>
                         <GridViewColumn Header="Должность"
- DisplayMemberBinding="{Binding NamePost}"/>
+ DisplayMemberBinding="{Binding NameCurriculum}"/>
+                        <GridViewColumn Header="Должность"
+ DisplayMemberBinding="{Binding AcademicYear}"/>
+                        <GridViewColumn Header="Должность"
+ DisplayMemberBinding="{Binding Speciality}"/>
+                        <GridViewColumn Header="Должность"
+ DisplayMemberBinding="{Binding Qualification}"/>
+                        <GridViewColumn Header="Должность"
+ DisplayMemberBinding="{Binding FormEducation}"/>
+                        <GridViewColumn Header="Должность"
+ DisplayMemberBinding="{Binding Course}"/>
+
                     </GridView.Columns>
                 </GridView>
             </ListView.View>

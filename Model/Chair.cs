@@ -25,6 +25,7 @@ namespace WpfApp1.Model
             {
                 this.Id = p.Id;
                 this.IdFaculty = IdFaculty;
+                this.Code = p.Code;
                 this.NameChair = p.NameChair;
                 this.ShortNameChair = p.ShortNameChair;
             }
@@ -32,13 +33,15 @@ namespace WpfApp1.Model
         }
         public int Id { get; set; }
         public int IdFaculty { get; set; }
+        public int Code { get; set; }
         public string NameChair { get; set; }
         public string ShortNameChair { get; set; }
         public Chair() { }
-        public Chair(int id, int idFaculty, string nameChair, string snChair)
+        public Chair(int id, int idFaculty, int code, string nameChair, string snChair)
         {
             this.Id = id;
             this.IdFaculty = idFaculty;
+            this.Code = code;
             this.NameChair = nameChair;
             this.ShortNameChair = snChair;
         }

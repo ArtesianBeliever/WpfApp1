@@ -32,6 +32,7 @@ namespace WpfApp1.Model
             {
                 chDPO.Id = chair.Id;
                 chDPO.NameFaculty = faculty;
+                chDPO.Code = chair.Code;
                 chDPO.NameChair = chair.NameChair;
                 chDPO.ShortNameChair = chair.ShortNameChair;
             }
@@ -39,13 +40,15 @@ namespace WpfApp1.Model
         }
         public int Id { get; set; }
         public string NameFaculty { get; set; }
+        public int Code { get; set; }
         public string NameChair { get; set; }
         public string ShortNameChair { get; set; }
         public ChairDPO() { }
-        public ChairDPO(int id, string NameFaculty, string nameChair, string snChair)
+        public ChairDPO(int id, string NameFaculty, int code, string nameChair, string snChair)
         {
             this.Id = id;
             this.NameFaculty = NameFaculty;
+            this.Code = code;
             this.NameChair = nameChair;
             this.ShortNameChair = snChair;
         }

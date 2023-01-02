@@ -13,10 +13,7 @@
  Click="btnAdd_Click"/>
             <Button x:Name="btnEdit" Margin="10,10,5,10" Content="Редактировать"
  Height="25" Click="btnEdit_Click"/>
-            <Button x:Name="btnDelete" Margin="10,10,5,10" Content="Удалить"
-Height="25"
- Click="btnDelete_Click"/>
-
+            <Button x:Name="btnDelete" Margin="10,10,5,10" Content="Удалить" Height="25" Click="btnDelete_Click"/>
             <ListView x:Name="lvGroup">
                 <ListView.View>
                     <GridView>
@@ -25,18 +22,24 @@ Height="25"
                                             DisplayMemberBinding="{Binding Id}"/>
                             <GridViewColumn Header="Кафедра" 
                                             DisplayMemberBinding="{Binding NameChair}"/>
-                            <GridViewColumn Header="Должность" 
-                                            DisplayMemberBinding="{Binding NamePost}"/>
-                            <GridViewColumn Header="Имя"
-                                            DisplayMemberBinding="{Binding FirstName}"/>
-                            <GridViewColumn Header="Отчество"
-                                            DisplayMemberBinding="{Binding SecondName}"/>
-                            <GridViewColumn Header="Фамилия"
-                                            DisplayMemberBinding="{Binding LastName}"/>
-                            <GridViewColumn Header="Номер" 
-                                            DisplayMemberBinding="{Binding Phone}"/>
-                            <GridViewColumn Header="Почта" 
-                                            DisplayMemberBinding="{Binding EMail}"/>
+                            <GridViewColumn Header="Учебный План" 
+                                            DisplayMemberBinding="{Binding NameCurriculum}"/>
+                            <GridViewColumn Header="Дисциплина"
+                                            DisplayMemberBinding="{Binding NameDiscipline}"/>
+                            <GridViewColumn Header="Курс"
+                                            DisplayMemberBinding="{Binding Course}"/>
+                            <GridViewColumn Header="Семестр"
+                                            DisplayMemberBinding="{Binding Semester}"/>
+                            <GridViewColumn Header="Кол-во Лекций" 
+                                            DisplayMemberBinding="{Binding Lecture}"/>
+                            <GridViewColumn Header="Кол-Во Лабораторных" 
+                                            DisplayMemberBinding="{Binding Laboratory}"/>
+                            <GridViewColumn Header="Кол-Во Практических" 
+                                            DisplayMemberBinding="{Binding Practical}"/>
+                            <GridViewColumn Header="Экзамен" 
+                                            DisplayMemberBinding="{Binding Examen}"/>
+                            <GridViewColumn Header="Зачет" 
+                                            DisplayMemberBinding="{Binding SetOff}"/>
                         </GridView.Columns>
                     </GridView>
                 </ListView.View>

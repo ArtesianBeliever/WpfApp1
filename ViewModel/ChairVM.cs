@@ -34,6 +34,7 @@ namespace WpfApp1.ViewModel
             {
                 Id = 1,
                 IdFaculty = 1,
+                Code = 09,
                 NameChair = "Кафедра Компьютерных Технологий и Информационной безопасности",
                 ShortNameChair = "КТиБ"
             });
@@ -41,6 +42,7 @@ namespace WpfApp1.ViewModel
             {
                 Id = 2,
                 IdFaculty = 2,
+                Code = 02,
                 NameChair = "Кафедра Права",
                 ShortNameChair = "КП"
             });
@@ -48,6 +50,7 @@ namespace WpfApp1.ViewModel
             {
                 Id = 3,
                 IdFaculty = 2,
+                Code = 01,
                 NameChair = "Кафедра Экономики и Финансов",
                 ShortNameChair = "КЭФ"
             });

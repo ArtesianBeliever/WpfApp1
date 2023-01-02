@@ -55,16 +55,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Helper\FindTeacher.cs" />
-    <Compile Include="Helper\FindPost.cs" />
+    <Compile Include="Helper\FindDiscipline.cs" />
+    <Compile Include="Helper\FindCurriculum.cs" />
     <Compile Include="Helper\FindFaculty.cs" />
     <Compile Include="Helper\FindChair.cs" />
-    <Compile Include="Model\TeacherDPO.cs" />
+    <Compile Include="Model\DisciplineDPO.cs" />
     <Compile Include="Model\ChairDPO.cs" />
     <Compile Include="ViewModel\FacultyVM.cs" />
     <Compile Include="ViewModel\ChairVM.cs" />
-    <Compile Include="ViewModel\PostVM.cs" />
-    <Compile Include="ViewModel\TeacherVM.cs" />
+    <Compile Include="ViewModel\CurriculumVM.cs" />
+    <Compile Include="ViewModel\DisciplineVM.cs" />
     <Compile Include="View\NewChair.xaml.cs">
       <DependentUpon>NewChair.xaml</DependentUpon>
     </Compile>
@@ -135,8 +135,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Post.cs" />
-    <Compile Include="Model\Teacher.cs" />
+    <Compile Include="Model\Curriculum.cs" />
+    <Compile Include="Model\Discipline.cs" />
     <Compile Include="Model\Faculty.cs" />
     <Compile Include="Model\Chair.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
