@@ -28,7 +28,7 @@ namespace WpfApp1
         }
         private void Group_OnClick(object sender, RoutedEventArgs e)
         {
-            WindowGroup wGroup = new WindowGroup();
+            WindowDiscipline wGroup = new WindowDiscipline();
             wGroup.Show();
         }
         private void Form_OnClick(object sender, RoutedEventArgs e)
@@ -38,7 +38,7 @@ namespace WpfApp1
         }
         private void Spec_OnClick(object sender, RoutedEventArgs e)
         {
-            WindowPost wSpec = new WindowPost();
+            WindowCurriculum wSpec = new WindowCurriculum();
             wSpec.Show();
         }
         private void Qual_OnClick(object sender, RoutedEventArgs e)

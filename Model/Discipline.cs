@@ -23,7 +23,7 @@ namespace WpfApp1.Model
                     break;
                 }
             }
-            foreach (var q in vmPost.ListPost)
+            foreach (var q in vmPost.ListCurriculum)
             {
                 if (q.NameCurriculum == p.NameCurriculum)
                 {
@@ -57,12 +57,12 @@ namespace WpfApp1.Model
         public int Lecture { get; set; }
         public int Laboratory { get; set; }
         public int Practical { get; set; }
-        public bool Examen { get; set; }
-        public bool SetOff { get; set; }
+        public string Examen { get; set; }
+        public string SetOff { get; set; }
 
         public Discipline() { }
         public Discipline(int id, int idChair, int idCurriculum, string nameDiscipline,
-        int course, int semester, int lecture, int laboratory, int practical, bool examen, bool setOff)
+        int course, int semester, int lecture, int laboratory, int practical, string examen, string setOff)
         {
             this.Id = id;
             this.IdChair = idChair;

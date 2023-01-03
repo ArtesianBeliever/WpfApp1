@@ -92,6 +92,7 @@ namespace WpfApp1.View
                     // перенос данных из временного класса в класс отображения данных
                     Faculty r = (Faculty)wnEmployee.CbChair.SelectedValue;
                     perDPO.NameFaculty = r.NameFaculty;
+                    perDPO.Code = tempPerDPO.Code;
                     perDPO.NameChair = tempPerDPO.NameChair;
                     perDPO.ShortNameChair = tempPerDPO.ShortNameChair;
 

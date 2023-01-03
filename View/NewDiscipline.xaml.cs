@@ -15,17 +15,17 @@ using System.Windows.Shapes;
 namespace WpfApp1.View
 {
     /// <summary>
-    /// Логика взаимодействия для NewPost.xaml
+    /// Логика взаимодействия для NewGroup.xaml
     /// </summary>
-    public partial class NewPost : Window
+    public partial class NewDiscipline : Window
     {
+        public NewDiscipline()
+        {
+            InitializeComponent();
+        }
         private void BtSave_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
-        }
-        public NewPost()
-        {
-            InitializeComponent();
         }
     }
 }

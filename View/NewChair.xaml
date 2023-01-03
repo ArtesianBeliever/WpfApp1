@@ -12,6 +12,7 @@
             <RowDefinition Height="40*"/>
             <RowDefinition Height="40*"/>
             <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
 
 
             <RowDefinition Height="50*"/>
@@ -27,20 +28,27 @@
  Text="Факультет:" HorizontalAlignment="Right"
  VerticalAlignment="Center" Margin="5"/>
         <TextBlock Grid.Row="2" Grid.Column="0"
- Text="Название Кафедры:" HorizontalAlignment="Right"
+ Text="Код Кафедры:" HorizontalAlignment="Right"
  VerticalAlignment="Center" Margin="0,11,10,14"/>
         <TextBlock Grid.Row="3" Grid.Column="0"
+ Text="Название Кафедры:" HorizontalAlignment="Right"
+ VerticalAlignment="Center" Margin="0,11,10,14"/>
+        <TextBlock Grid.Row="4" Grid.Column="0"
  Text="Сокращение:" HorizontalAlignment="Right"
  VerticalAlignment="Center" Margin="0,11,10,14" RenderTransformOrigin="0.703,0.538"/>
         <TextBox x:Name="TbId" Grid.Row="0" Grid.Column="1"
  Text="{Binding Id}" Height="20" Width="50"
  HorizontalAlignment="Left" VerticalAlignment="Center"
  Margin="5" IsEnabled="False"/>
-        <TextBox x:Name="TbFaculty" Grid.Row="2" Grid.Column="1"
+        <TextBox x:Name="TbCode" Grid.Row="2" Grid.Column="1"
+ Text="{Binding Code}"
+ Height="20" Width="130"
+ HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,11,0,10"/>
+        <TextBox x:Name="TbFaculty" Grid.Row="3" Grid.Column="1"
  Text="{Binding NameChair}"
  Height="20" Width="130"
  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,11,0,10"/>
-        <TextBox x:Name="TbName" Grid.Row="3" Grid.Column="1"
+        <TextBox x:Name="TbName" Grid.Row="4" Grid.Column="1"
  Text="{Binding ShortNameChair}"
  Height="20" Width="130"
  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,11,0,10"/>

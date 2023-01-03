@@ -8,8 +8,8 @@
         Title="MainWindow" Height="200" Width="400">
     <Grid>
         <Menu>
-            <MenuItem x:Name="Group" Header="Преподаватели" Click="Group_OnClick"></MenuItem>
-            <MenuItem x:Name="Spec" Header="Должности" Click="Spec_OnClick"></MenuItem>
+            <MenuItem x:Name="Group" Header="Дисциплины" Click="Group_OnClick"></MenuItem>
+            <MenuItem x:Name="Spec" Header="Учебные Планы" Click="Spec_OnClick"></MenuItem>
             <MenuItem x:Name="Qual" Header="Факультеты" Click="Qual_OnClick"></MenuItem>
             <MenuItem x:Name="Form" Header="Кафедры" Click="Form_OnClick"></MenuItem>
         </Menu>

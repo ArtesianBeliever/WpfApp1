@@ -21,23 +21,27 @@ namespace WpfApp1.View
     /// <summary>
     /// Логика взаимодействия для WindowGroup.xaml
     /// </summary>
-    public partial class WindowGroup : Window
+    public partial class WindowDiscipline : Window
     {
         private DisciplineVM vmTeach;
         private ChairVM vmChair;
         private CurriculumVM vmPost;
         private ObservableCollection<DisciplineDPO> teachDPO;
         private List<Chair> chairs;
-        private List<Curriculum> posts;
+        private List<Curriculum> currs;
 
-        public WindowGroup()
+        public WindowDiscipline()
         {
             InitializeComponent();
             vmTeach = new DisciplineVM();
             vmChair = new ChairVM();
             vmPost = new CurriculumVM();
             chairs = vmChair.ListChair.ToList();
-            posts = vmPost.ListPost.ToList();
+            currs = vmPost.ListCurriculum.ToList();
+            foreach (Curriculum curriculum in currs)
+            {
+                MessageBox.Show(curriculum.NameCurriculum);
+            }
             // Формирование данных для отображения сотрудников с должностями
             // на базе коллекции класса ListPerson<Person>
             teachDPO = new ObservableCollection<DisciplineDPO>();
@@ -51,9 +55,9 @@ namespace WpfApp1.View
         }
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            NewTeach wnEmployee = new NewTeach
+            NewDiscipline wnEmployee = new NewDiscipline
             {
-                Title = "Новый преподаватель",
+                Title = "Новая Дисциплина",
                 Owner = this
             };
             // формирование кода нового сотрудника
@@ -64,7 +68,7 @@ namespace WpfApp1.View
             };
             wnEmployee.DataContext = gr;
             wnEmployee.CbChair.ItemsSource = chairs;
-            wnEmployee.CbPost.ItemsSource = posts;
+            wnEmployee.CbPost.ItemsSource = currs;
 
             if (wnEmployee.ShowDialog() == true)
             {
@@ -81,7 +85,7 @@ namespace WpfApp1.View
         }
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            NewTeach wnEmployee = new NewTeach
+            NewDiscipline wnEmployee = new NewDiscipline
             {
                 Title = "Редактирование данных",
                 Owner = this
@@ -94,7 +98,7 @@ namespace WpfApp1.View
                 wnEmployee.DataContext = tempPerDPO;
                 wnEmployee.CbChair.ItemsSource = chairs;
                 wnEmployee.CbChair.Text = tempPerDPO.NameChair;
-                wnEmployee.CbPost.ItemsSource = posts;
+                wnEmployee.CbPost.ItemsSource = currs;
                 wnEmployee.CbPost.Text = tempPerDPO.NameCurriculum;
                 if (wnEmployee.ShowDialog() == true)
                 {
@@ -122,7 +126,7 @@ namespace WpfApp1.View
             }
             else
             {
-                MessageBox.Show("Необходимо выбрать сотрудника для редактированния",
+                MessageBox.Show("Необходимо выбрать дисциплину для редактированния",
                 "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
@@ -145,7 +149,7 @@ namespace WpfApp1.View
             }
             else
             {
-                MessageBox.Show("Необходимо выбрать данные сотрудника для удаления",
+                MessageBox.Show("Необходимо выбрать данные дисциплины для удаления",
                 "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }

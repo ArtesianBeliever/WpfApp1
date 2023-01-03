@@ -19,19 +19,19 @@ namespace WpfApp1.View
     /// <summary>
     /// Логика взаимодействия для WindowForm.xaml
     /// </summary>
-    public partial class WindowPost : Window
+    public partial class WindowCurriculum : Window
     {
         CurriculumVM vmPost = new CurriculumVM();
-        public WindowPost()
+        public WindowCurriculum()
         {
             InitializeComponent();
-            lvPost.ItemsSource = vmPost.ListPost;
+            lvPost.ItemsSource = vmPost.ListCurriculum;
         }
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            NewPost wnPost = new NewPost
+            NewCurr wnPost = new NewCurr
             {
-                Title = "Новая должность",
+                Title = "Новый план",
                 Owner = this
             };
             // формирование кода новой должности
@@ -43,14 +43,14 @@ namespace WpfApp1.View
             wnPost.DataContext = qual;
             if (wnPost.ShowDialog() == true)
             {
-                vmPost.ListPost.Add(qual);
+                vmPost.ListCurriculum.Add(qual);
             }
         }
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            NewPost wnPost = new NewPost
+            NewCurr wnPost = new NewCurr
             {
-                Title = "Редактирование должности",
+                Title = "Редактирование Учебного плана",
                 Owner = this
             };
             Curriculum qual = lvPost.SelectedItem as Curriculum;
@@ -62,13 +62,18 @@ namespace WpfApp1.View
                 {
                     // сохранение данных
                     qual.NameCurriculum = tempQual.NameCurriculum;
+                    qual.AcademicYear = tempQual.AcademicYear;
+                    qual.Speciality = tempQual.Speciality;
+                    qual.Qualification = tempQual.Qualification;
+                    qual.FormEducation = tempQual.FormEducation;
+                    qual.Course = tempQual.Course;
                     lvPost.ItemsSource = null;
-                    lvPost.ItemsSource = vmPost.ListPost;
+                    lvPost.ItemsSource = vmPost.ListCurriculum;
                 }
             }
             else
             {
-                MessageBox.Show("Необходимо выбрать должность для редактированния",
+                MessageBox.Show("Необходимо выбрать план для редактированния",
                 "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
@@ -77,17 +82,17 @@ namespace WpfApp1.View
             Curriculum qual = (Curriculum)lvPost.SelectedItem;
             if (qual != null)
             {
-                MessageBoxResult result = MessageBox.Show("Удалить данные по должности: " +
+                MessageBoxResult result = MessageBox.Show("Удалить данные по плану: " +
                 qual.NameCurriculum, "Предупреждение", MessageBoxButton.OKCancel,
                 MessageBoxImage.Warning);
                 if (result == MessageBoxResult.OK)
                 {
-                    vmPost.ListPost.Remove(qual);
+                    vmPost.ListCurriculum.Remove(qual);
                 }
             }
             else
             {
-                MessageBox.Show("Необходимо выбрать должность для удаления",
+                MessageBox.Show("Необходимо выбрать план для удаления",
                 "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }

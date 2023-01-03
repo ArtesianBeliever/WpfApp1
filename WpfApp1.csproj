@@ -71,17 +71,17 @@
     <Compile Include="View\NewFaculty.xaml.cs">
       <DependentUpon>NewFaculty.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\NewPost.xaml.cs">
-      <DependentUpon>NewPost.xaml</DependentUpon>
+    <Compile Include="View\NewCurr.xaml.cs">
+      <DependentUpon>NewCurr.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\NewTeach.xaml.cs">
-      <DependentUpon>NewTeach.xaml</DependentUpon>
+    <Compile Include="View\NewDiscipline.xaml.cs">
+      <DependentUpon>NewDiscipline.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\WindowPost.xaml.cs">
-      <DependentUpon>WindowPost.xaml</DependentUpon>
+    <Compile Include="View\WindowCurriculum.xaml.cs">
+      <DependentUpon>WindowCurriculum.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\WindowTeacher.xaml.cs">
-      <DependentUpon>WindowTeacher.xaml</DependentUpon>
+    <Compile Include="View\WindowDiscipline.xaml.cs">
+      <DependentUpon>WindowDiscipline.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WindowFac.xaml.cs">
       <DependentUpon>WindowFac.xaml</DependentUpon>
@@ -109,19 +109,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\NewPost.xaml">
+    <Page Include="View\NewCurr.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\NewTeach.xaml">
+    <Page Include="View\NewDiscipline.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\WindowPost.xaml">
+    <Page Include="View\WindowCurriculum.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\WindowTeacher.xaml">
+    <Page Include="View\WindowDiscipline.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
