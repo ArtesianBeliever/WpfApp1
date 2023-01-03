@@ -38,10 +38,6 @@ namespace WpfApp1.View
             vmPost = new CurriculumVM();
             chairs = vmChair.ListChair.ToList();
             currs = vmPost.ListCurriculum.ToList();
-            foreach (Curriculum curriculum in currs)
-            {
-                MessageBox.Show(curriculum.NameCurriculum);
-            }
             // Формирование данных для отображения сотрудников с должностями
             // на базе коллекции класса ListPerson<Person>
             teachDPO = new ObservableCollection<DisciplineDPO>();
